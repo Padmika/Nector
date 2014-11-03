@@ -1,4 +1,4 @@
-###Achilles
+#Achilles
 ========
 
 A thin C# client wrapper for Apache Cassandra  thrift interface.
@@ -13,5 +13,5 @@ However if you are like me  and hate dealing with delegates then Achilles will b
 This is the first step of a journey where I'm hoping to port Usergrid (https://github.com/usergrid) which is a pretty awesome BaaS (Backend as a Service) to .Net (or at least die trying).
 Releasing this code as a reusable component so that somebody else will be able to make use of it as well and not be frustrated with working with the Thrift interface.
 
-# Why Thrift and not CQL?
+## Why Thrift and not CQL?
 Thrift is incredibly powerful than CQL in some aspects. Especially when it comes to each Cassandra Row having its own schema. This is a very useful feature when it comes to storing dynamic and semi static data.      
