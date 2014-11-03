@@ -48,7 +48,7 @@ Make sure you have added a reference to Achilles and imported it through a using
                 client.setColumns(keyspace, cf, Utility.ToByteArray(key), map);
                 
 				//Get the column
-                NColumn<string,string> intColumnResult = client.getColumn<string,string>(keyspace, cf, key, colName1);
+                NColumn<string,string> columnResult = client.getColumn<string,string>(keyspace, cf, key, colName1);
                 
 				client.dropKeyspace(keyspace);
             }
