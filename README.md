@@ -53,3 +53,4 @@ Make sure you have added a reference to Achilles and imported it through a using
 				client.dropKeyspace(keyspace);
             }
   ```
+Take a look at DemoConsoleApp and Achilles.Core.Tests for more usage
