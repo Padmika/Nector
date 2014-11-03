@@ -10,18 +10,7 @@ namespace Achilles.DemoConsoleApp
     {
         static void Main(string[] args)
         {
-            //string keyspace ="example";
-            //using (Client client = new Client())
-            //{
-            //    List<Keyspace> kslist = client.getKeyspaces();
-            //    ColumnFamily cf = new ColumnFamily();
-            //    cf.Name = "cf2";
-            //    //client.createColumnFamily(keyspace, cf);
-            //    //client.setColumn("example", cf, "100", "col1", "co1100");
-            //    //var collist = client.getAllColumnNames(keyspace, cf, "100");
-            //    List<NColumn<string, string>> colsForRow = client.getAllColumns<string, string>(keyspace, cf, "100");
-            //}
-
+          
             string keyspace = "ConsoleExample";
 
             /* Some columns the first and second will be string columns (Both Name and Value) 
