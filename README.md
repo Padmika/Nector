@@ -5,8 +5,8 @@ A thin C# client wrapper for Apache Cassandra  thrift interface.
 This is a mashup between Hector (https://github.com/hector-client/hector) and the CassandraService class of (https://github.com/usergrid) 
 
 The best C# driver for Cassandra thrift interface is Aquiles (https://aquiles.codeplex.com/). 
-It has a lot of features (like connection pooling, endpoint manager) which is currently lacking in Achilles. (Hopefully will be added in future :)). 
-However if you are like me  and hate dealing with delegates then Achilles will be a nice compromise for you.
+It has a lot of features (like connection pooling, endpoint manager) which is currently lacking in Nector. (Hopefully will be added in future :)). 
+However if you are like me  and hate dealing with delegates then Nector will be a nice compromise for you.
 
 ## Motivation,
 This is the first step of a journey where I'm hoping to port Usergrid (https://github.com/usergrid) which is a pretty awesome BaaS (Backend as a Service) to .Net (or at least die trying).
@@ -53,4 +53,4 @@ Make sure you have added a reference to Nector and imported it through a using s
 				client.dropKeyspace(keyspace);
             }
   ```
-Take a look at DemoConsoleApp and Achilles.Core.Tests for more usage
+Take a look at DemoConsoleApp and Nector.Core.Tests for more usage
