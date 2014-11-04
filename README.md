@@ -1,4 +1,4 @@
-#Achilles
+#Nector
 ========
 A thin C# client wrapper for Apache Cassandra  thrift interface.
 
@@ -25,7 +25,7 @@ Run the DemoConsole app or the XUnit tests to see sample usage
 
 
 ##Sample usage
-Make sure you have added a reference to Achilles and imported it through a using statement ( ex: using Achilles.Core;)
+Make sure you have added a reference to Nector and imported it through a using statement ( ex: using Nector.Core;)
 ```csharp
             string colValue1 = "sampleValue1";
             string colName1 = "sampleName1";
