@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Apache.Cassandra;
 
-namespace Achilles.Core
+namespace Nector.Core
 {
     public class ThriftUtility
     {

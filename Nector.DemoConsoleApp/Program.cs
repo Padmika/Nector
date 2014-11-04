@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Achilles.Core;
+using Nector.Core;
 
-namespace Achilles.DemoConsoleApp
+namespace Nector.DemoConsoleApp
 {
     class Program
     {

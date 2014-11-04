@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Achilles.Core.Tests")]
+[assembly: AssemblyTitle("Nector.DemoConsoleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Achilles.Core.Tests")]
+[assembly: AssemblyProduct("Nector.DemoConsoleApp")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("590bb094-c34f-4150-8eb9-c7542dfac20e")]
+[assembly: Guid("398abb2b-2abe-44af-a738-e29582b205b0")]
 
 // Version information for an assembly consists of the following four values:
 //

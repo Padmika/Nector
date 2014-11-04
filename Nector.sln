@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achilles.Core", "Achilles.Core\Achilles.Core.csproj", "{25B902D5-F58F-4A19-9922-6E0B55872812}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nector.Core", "Nector.Core\Nector.Core.csproj", "{25B902D5-F58F-4A19-9922-6E0B55872812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achilles.DemoConsoleApp", "Achilles.DemoConsoleApp\Achilles.DemoConsoleApp.csproj", "{AA162A44-6E7E-4E29-93DC-91237D184C8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nector.DemoConsoleApp", "Nector.DemoConsoleApp\Nector.DemoConsoleApp.csproj", "{AA162A44-6E7E-4E29-93DC-91237D184C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achilles.Core.Tests", "Achilles.Core.Tests\Achilles.Core.Tests.csproj", "{138E6143-FE71-4726-A356-3D3E96A351B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nector.Core.Tests", "Nector.Core.Tests\Nector.Core.Tests.csproj", "{138E6143-FE71-4726-A356-3D3E96A351B6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3BEFD517-0C9F-4D24-9E23-77531AE84576}"
 	ProjectSection(SolutionItems) = preProject

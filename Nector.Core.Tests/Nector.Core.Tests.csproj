@@ -8,8 +8,8 @@
     <ProjectGuid>{138E6143-FE71-4726-A356-3D3E96A351B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Achilles.Core.Tests</RootNamespace>
-    <AssemblyName>Achilles.Core.Tests</AssemblyName>
+    <RootNamespace>Nector.Core.Tests</RootNamespace>
+    <AssemblyName>Nector.Core.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -51,9 +51,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Achilles.Core\Achilles.Core.csproj">
+    <ProjectReference Include="..\Nector.Core\Nector.Core.csproj">
       <Project>{25B902D5-F58F-4A19-9922-6E0B55872812}</Project>
-      <Name>Achilles.Core</Name>
+      <Name>Nector.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

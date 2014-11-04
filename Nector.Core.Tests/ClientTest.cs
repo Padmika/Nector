@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Xunit;
 
-namespace Achilles.Core.Tests
+namespace Nector.Core.Tests
 {
     public class ClientTest
     {

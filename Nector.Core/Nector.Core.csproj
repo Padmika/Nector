@@ -8,8 +8,8 @@
     <ProjectGuid>{25B902D5-F58F-4A19-9922-6E0B55872812}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Achilles.Core</RootNamespace>
-    <AssemblyName>Achilles.Core</AssemblyName>
+    <RootNamespace>Nector.Core</RootNamespace>
+    <AssemblyName>Nector.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

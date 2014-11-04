@@ -13,7 +13,7 @@ using System.Threading;
 
 
 
-namespace Achilles.Core
+namespace Nector.Core
 {
     public class Client :IDisposable
     {

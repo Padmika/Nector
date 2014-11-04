@@ -8,8 +8,8 @@
     <ProjectGuid>{AA162A44-6E7E-4E29-93DC-91237D184C8F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Achilles.DemoConsoleApp</RootNamespace>
-    <AssemblyName>Achilles.DemoConsoleApp</AssemblyName>
+    <RootNamespace>Nector.DemoConsoleApp</RootNamespace>
+    <AssemblyName>Nector.DemoConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -51,9 +51,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Achilles.Core\Achilles.Core.csproj">
+    <ProjectReference Include="..\Nector.Core\Nector.Core.csproj">
       <Project>{25B902D5-F58F-4A19-9922-6E0B55872812}</Project>
-      <Name>Achilles.Core</Name>
+      <Name>Nector.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
