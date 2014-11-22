@@ -294,7 +294,7 @@ namespace Nector.Core
         public List<NColumn<N, V>> getAllColumns<N, V>(string keyspace, Object columnFamily, Object key)
         {
             client.set_keyspace(keyspace);
-            byte[] binaryKey = Utility.ToByteArray(key);
+            byte[] binaryKey = key.ToByteArray();
             ColumnParent cp = new ColumnParent() { Column_family = columnFamily.ToString() };
             SlicePredicate sp = new SlicePredicate();
             sp.Slice_range = new SliceRange();
@@ -337,12 +337,12 @@ namespace Nector.Core
         {
             client.set_keyspace(keyspace);
 
-            byte[] binaryKey = Utility.ToByteArray(key);
+            byte[] binaryKey = key.ToByteArray();
             ColumnParent cp = new ColumnParent() { Column_family = columnFamily.ToString() };
             SlicePredicate sp = new SlicePredicate();
             sp.Slice_range = new SliceRange();
-            sp.Slice_range.Start = Utility.ToByteArray(start);
-            sp.Slice_range.Finish = Utility.ToByteArray(finish);
+            sp.Slice_range.Start = start.ToByteArray();
+            sp.Slice_range.Finish = finish.ToByteArray();
             sp.Slice_range.Reversed = reversed;
             sp.Slice_range.Count = count;
             return ThriftUtility.ToNColumnList<byte, byte>(client.get_slice(binaryKey, cp, sp, consistencyLevel));
@@ -365,11 +365,11 @@ namespace Nector.Core
                                                                                        bool reversed)
         {
             client.set_keyspace(keyspace);
-            List<byte[]> binaryKeys = Utility.ToByteArrayListFromCollection<object>(keys);
+            List<byte[]> binaryKeys = keys.ToByteArrayListFromCollection<object>();
             SlicePredicate sp = new SlicePredicate();
             sp.Slice_range = new SliceRange();
-            sp.Slice_range.Start = Utility.ToByteArray(start);
-            sp.Slice_range.Finish = Utility.ToByteArray(finish);
+            sp.Slice_range.Start = start.ToByteArray();
+            sp.Slice_range.Finish = finish.ToByteArray();
             sp.Slice_range.Reversed = reversed;
             sp.Slice_range.Count = count;
             var results = ThriftUtility.ToByteDictionaryFromColumnDictionary(client.multiget_slice(binaryKeys,
@@ -383,7 +383,7 @@ namespace Nector.Core
         {
 
             client.set_keyspace(keyspace);
-            List<byte[]> binaryKeys = Utility.ToByteArrayListFromCollection<K>(keys);
+            List<byte[]> binaryKeys = keys.ToByteArrayListFromCollection<K>();
             ColumnParent cp = new ColumnParent() { Column_family = columnFamily.ToString() };
             SlicePredicate sp = new SlicePredicate();
             sp.Slice_range = new SliceRange();
@@ -402,8 +402,8 @@ namespace Nector.Core
         {
             client.set_keyspace(keyspace);
             SlicePredicate sp = new SlicePredicate();
-            sp.Column_names = Utility.ToByteArrayListFromCollection<string>(columnNames);
-            var results = ThriftUtility.ToNColumnList<N, V>(client.get_slice(Utility.ToByteArray(key),
+            sp.Column_names = columnNames.ToByteArrayListFromCollection<string>();
+            var results = ThriftUtility.ToNColumnList<N, V>(client.get_slice(key.ToByteArray(),
                 new ColumnParent() { Column_family = columnFamily.ToString() }, sp, consistencyLevel));
             return results;
         }
@@ -415,9 +415,9 @@ namespace Nector.Core
         {
 
             client.set_keyspace(keyspace);
-            List<byte[]> binaryKeys = Utility.ToByteArrayListFromCollection<K>(keys);
+            List<byte[]> binaryKeys = keys.ToByteArrayListFromCollection<K>();
             SlicePredicate sp = new SlicePredicate();
-            sp.Column_names = Utility.ToByteArrayListFromCollection<string>(columnNames);
+            sp.Column_names = columnNames.ToByteArrayListFromCollection<string>();
             Rows<K, N, V> results = ThriftUtility.ToRowsFromSliceQuery<K, N, V>(client.multiget_slice(binaryKeys,
                new ColumnParent() { Column_family = columnFamily.ToString() }, sp, consistencyLevel));
             return results;
@@ -429,10 +429,10 @@ namespace Nector.Core
         {
 
             client.set_keyspace(keyspace);
-            byte[] binaryKey = Utility.ToByteArray(key);
+            byte[] binaryKey = key.ToByteArray();
             ColumnPath cp = new ColumnPath();
             cp.Column_family = columnFamily.ToString();
-            cp.Column = Utility.ToByteArray(columnName);
+            cp.Column = columnName.ToByteArray();
             var result = ThriftUtility.ToNColumn<N, V>(client.get(binaryKey, cp, consistencyLevel).Column);
             return result;
         }
@@ -440,13 +440,11 @@ namespace Nector.Core
 
         public ColumnSlice<N, V> getColumns<N, V>(string keyspace, Object columnFamily, Object key, N[] columnNames)
         {
-
-
             client.set_keyspace(keyspace);
-            byte[] binaryKey = Utility.ToByteArray(key);
+            byte[] binaryKey = key.ToByteArray();
             ColumnParent cp = new ColumnParent() { Column_family = columnFamily.ToString() };
             SlicePredicate sp = new SlicePredicate();
-            sp.Column_names = Utility.ToByteArrayListFromCollection<N>(columnNames);
+            sp.Column_names = columnNames.ToByteArrayListFromCollection<N>();
             var result = ThriftUtility.ToNColumnList<N, V>(client.get_slice(binaryKey, cp, sp, consistencyLevel));
             ColumnSlice<N, V> cslice = new ColumnSlice<N, V>();
             cslice.Columns = result;
@@ -470,11 +468,11 @@ namespace Nector.Core
                                int ttl)
         {
             client.set_keyspace(keyspace);
-            byte[] binaryKey = Utility.ToByteArray(key);
+            byte[] binaryKey = key.ToByteArray();
             ColumnParent cp = new ColumnParent() { Column_family = columnFamily.ToString() };
             Column column = new Column();
-            column.Name = Utility.ToByteArray(columnName);
-            column.Value = Utility.ToByteArray(columnValue);
+            column.Name = columnName.ToByteArray();
+            column.Value = columnValue.ToByteArray();
             column.Timestamp = createTimestamp();
             if (ttl != 0)
             {
@@ -508,8 +506,8 @@ namespace Nector.Core
                 {
                     Mutation mutation = new Mutation();
                     Column column = new Column();
-                    column.Name = Utility.ToByteArray(name);
-                    column.Value = Utility.ToByteArray(value);
+                    column.Name = name.ToByteArray();
+                    column.Value = value.ToByteArray();
                     column.Timestamp = createTimestamp();
                     if (ttl != 0)
                     {
@@ -539,7 +537,7 @@ namespace Nector.Core
             client.set_keyspace(keyspace);
             Mutation mutation = new Mutation();
             SlicePredicate sp = new SlicePredicate();
-            sp.Column_names = Utility.ToByteArrayListFromCollection<object>(new[] { columnName });
+            sp.Column_names = (new[] { columnName }).ToByteArrayListFromCollection<object>();
             Deletion deletion = new Deletion();
             deletion.Predicate = sp;
             //timestamp should be optional but its not
@@ -552,7 +550,7 @@ namespace Nector.Core
 
             mutationList.Add(mutation);
             columnFamilyKey.Add(columnFamily.ToString(), mutationList);
-            mutation_map.Add(Utility.ToByteArray(key), columnFamilyKey);
+            mutation_map.Add(key.ToByteArray(), columnFamilyKey);
             client.batch_mutate(mutation_map, consistencyLevel);
         }
 
@@ -609,7 +607,7 @@ namespace Nector.Core
             List<K> list = new List<K>();
             foreach (var row in rows)
             {
-                list.Add((K)Utility.ToObjectFromByteArray(row.Key, typeof(K)));
+                list.Add((K)row.Key.ToObjectFromByteArray(typeof(K)));
             }
             return list;
         }
@@ -621,7 +619,7 @@ namespace Nector.Core
             client.set_keyspace(keyspace);
             ColumnPath columnPath = new ColumnPath();
             columnPath.Column_family = columnFamily.ToString();
-            client.remove(Utility.ToByteArray(key), columnPath, createTimestamp(), consistencyLevel);
+            client.remove(key.ToByteArray(), columnPath, createTimestamp(), consistencyLevel);
         }
 
         public void destroy()

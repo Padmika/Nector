@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Nector.Core
 {
-    public class Utility
+    public static class Utility
     {
-        public static byte[] ToByteArray(object obj)
+        public static byte[] ToByteArray(this object obj)
         {
             if (obj == null)
             {
@@ -49,7 +49,7 @@ namespace Nector.Core
         }
 
       
-        public static object ToObjectFromByteArray(byte[] array, Type t)
+        public static object ToObjectFromByteArray(this byte[] array, Type t)
         {
 
             string typeName = t.ToString();
@@ -90,7 +90,7 @@ namespace Nector.Core
         }
 
 
-        public static List<byte[]> ToByteArrayListFromCollection<T>(IEnumerable<T> list)
+        public static List<byte[]> ToByteArrayListFromCollection<T>(this IEnumerable<T> list)
         {
             List<byte[]> result = new List<byte[]>();
             foreach (var item in list)
@@ -100,7 +100,7 @@ namespace Nector.Core
             return result;
         }
 
-        public static List<T> ToListFromByteArrayList<T>(List<byte[]> list)
+        public static List<T> ToListFromByteArrayList<T>(this List<byte[]> list)
         {
             List<T> result = new List<T>();
             foreach (var item in list)
@@ -113,7 +113,7 @@ namespace Nector.Core
         /// <summary>
         /// Converts little-endian .NET guids to big-endian Java guids:
         /// </summary>
-        public static Guid ToBigEndian(Guid netGuid)
+        public static Guid ToBigEndian(this Guid netGuid)
         {
             byte[] java = new byte[16];
             byte[] net = netGuid.ToByteArray();

@@ -98,7 +98,7 @@ namespace Nector.Core.Tests
                 client.createColumnFamily(keyspace, cf);
 
                 //Act
-                client.setColumns(keyspace, cf, Utility.ToByteArray(key), map);
+                client.setColumns(keyspace, cf, key.ToByteArray(), map);
                 var cols = client.getAllColumns<string, string>(keyspace, cf, key);
                 ColumnSlice<string,string> results = client.getColumns<string, string>(keyspace, cf, key, colNames);
 

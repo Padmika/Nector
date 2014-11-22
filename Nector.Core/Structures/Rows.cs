@@ -10,7 +10,7 @@ namespace Nector.Core
         public List<Row<K, N, V>> rowsList { get; set;}
         public Row<K, N, V> getByKey(K key) 
         {
-            return rowsList.Where(r => Utility.ToByteArray(r.Key) == Utility.ToByteArray(key)).Single();
+            return rowsList.Where(r => r.Key.ToByteArray() == key.ToByteArray()).Single();
         }
         public int getCount() 
         {

@@ -15,7 +15,7 @@ namespace Nector.Core.Tests
             byte[] input=new byte[3]{0,1,2};
 
             //Act
-            byte[] result = Utility.ToByteArray(input);
+            byte[] result = input.ToByteArray();
 
             //Aseert
             Assert.Equal(input, result);
@@ -38,7 +38,7 @@ namespace Nector.Core.Tests
             inputList.Add(thirdItemInInputList);
 
             //Act
-            List<byte[]> result = Utility.ToByteArrayListFromCollection<object>(inputList);
+            List<byte[]> result = inputList.ToByteArrayListFromCollection<object>();
 
             //Aseert
             Assert.Equal<List<byte[]>>(expectedList, result);

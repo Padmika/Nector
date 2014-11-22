@@ -13,8 +13,8 @@ namespace Nector.Core
         public static NColumn<N, V> ToNColumn<N, V>(Column column)
         {
             NColumn<N, V> ncolumn = new NColumn<N, V>();
-            ncolumn.Name = (N)Utility.ToObjectFromByteArray(column.Name, typeof(N));
-            ncolumn.Value = (V)Utility.ToObjectFromByteArray(column.Value, typeof(V));
+            ncolumn.Name = (N)column.Name.ToObjectFromByteArray( typeof(N));
+            ncolumn.Value = (V)column.Value.ToObjectFromByteArray( typeof(V));
             ncolumn.ValueBytes = column.Value;
             ncolumn.NameBytes = column.Name;
             return ncolumn;
@@ -54,7 +54,7 @@ namespace Nector.Core
 
                 Row<K, N, V> row = new Row<K, N, V>();
                 row.ColumnSlice = cs;
-                row.Key = (K)Utility.ToObjectFromByteArray(entry.Key, typeof(K));
+                row.Key = (K)entry.Key.ToObjectFromByteArray( typeof(K));
 
                 rows.rowsList.Add(row);
             }

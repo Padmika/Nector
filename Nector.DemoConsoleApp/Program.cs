@@ -44,7 +44,7 @@ namespace Nector.DemoConsoleApp
                 cf.Name = colFamilyName;
                 client.createColumnFamily(keyspace, cf);
                 //Lets insert all the columns into the given row in one go
-                client.setColumns(keyspace, cf, Utility.ToByteArray(key), map);
+                client.setColumns(keyspace, cf, key.ToByteArray(), map);
 
                 //Get the columns given in the colNames array
                 ColumnSlice<string, string> stringColumnResult = client.getColumns<string, string>(keyspace, cf, key, colNames);
