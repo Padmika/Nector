@@ -93,7 +93,7 @@ namespace Nector.Core
             catch (AuthenticationException e)
             {
                 //To-do handle thirift auth exception with our own auth exception
-                throw e;
+                throw;
             }
             
         }
