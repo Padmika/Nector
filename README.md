@@ -17,10 +17,10 @@ Thrift is incredibly powerful than CQL in some aspects. Especially when it comes
 
 
 ##Getting Started
-Open the solution using Visual Studio 2010  (or above)
-Do a quick build it will restore some nuget packages
-Make sure you have Cassandra installed and running
-Run the DemoConsole app or the XUnit tests to see sample usage
+Open the solution using Visual Studio 2010 (or above).
+Do a quick build it will restore some nuget packages.
+Make sure you have Cassandra installed and running.
+Run the DemoConsole app or the XUnit tests to see sample usage.
 
 
 
